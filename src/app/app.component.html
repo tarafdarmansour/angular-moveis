@@ -13,5 +13,6 @@
 </div>
 
 <h2>Movie Data</h2>
-<div>{{movie.title}}</div>
-<div>{{movie.releaseDate}}</div>
+<div>{{movie.title | uppercase}}</div>
+<div>{{movie.releaseDate | date:"dd-MM-yyyy"}}</div>
+<div>{{movie.price | currency}}</div>
