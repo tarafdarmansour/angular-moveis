@@ -13,6 +13,8 @@
 </div>
 
 <h2>Movie Data</h2>
-<div>{{movie.title | uppercase}}</div>
-<div>{{movie.releaseDate | date:"dd-MM-yyyy"}}</div>
-<div>{{movie.price | currency}}</div>
+<div *ngFor="let movie of movies;let index = index" class='movie-container'>
+    <div>{{index}}) {{movie.title | uppercase}}</div>
+    <div>{{movie.releaseDate | date:"dd-MMMM-yyyy" | uppercase}}</div>
+    <div>{{movie.price | currency}}</div>
+</div>
