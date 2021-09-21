@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-moveis'
+  title = 'angular-moveis';
+
+  duplicatenumber(n: number) {
+    return n * 2;
+  }
+
+  movie = {
+    title: 'Spider-Man',
+    releaseDate: new Date()
+}
+
 }
