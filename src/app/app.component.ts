@@ -20,18 +20,7 @@ export class AppComponent implements OnInit {
       },
     ];
 
-    this.moviesFutureRealses = [
-      {
-        title: 'Avengers',
-        releaseDate: new Date('2020-12-05'),
-        price: 584.99,
-      },
-      {
-        title: 'Toy Story',
-        releaseDate: new Date('2019-11-14'),
-        price: 300.99,
-      },
-    ];
+    this.moviesFutureRealses = [];
   }
   title = 'angular-moveis';
 
