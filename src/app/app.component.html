@@ -1,17 +1,5 @@
-<p>Hello World</p>
+<h2>In Theaters</h2>
+<app-movies-list></app-movies-list>
 
-<div>
-  {{ title }}
-</div>
-
-<div>the sum of 2 and 2 is {{ 2 + 2 }}</div>
-<div>The double of 3 is {{ duplicatenumber(3) }}</div>
-
-<h2>Movie Data</h2>
-<img *ngIf="!movies" src="../assets/loading.gif" />
-<div *ngIf="movies?.length === 0">There are no records to display</div>
-<div *ngFor="let movie of movies; let index = index" class="movie-container">
-  <div>{{ index }}) {{ movie.title | uppercase }}</div>
-  <div>{{ movie.releaseDate | date: "dd-MMMM-yyyy" | uppercase }}</div>
-  <div>{{ movie.price | currency }}</div>
-</div>
+<h2>Future Releases</h2>
+<app-movies-list></app-movies-list>
