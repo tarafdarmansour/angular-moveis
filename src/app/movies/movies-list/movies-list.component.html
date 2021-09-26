@@ -1,4 +1,4 @@
-<img *ngIf="!movies" src="~/assets/loading.gif" />
+<img *ngIf="!movies" src="../../assets/loading.gif" />
 <div *ngIf="movies?.length === 0">There are no records to display</div>
 <div *ngFor="let movie of movies; let index = index" class="movie-container">
   <div>{{ index }}) {{ movie.title | uppercase }}</div>

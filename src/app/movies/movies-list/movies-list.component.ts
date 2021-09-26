@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-movies-list',
@@ -8,22 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesListComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.movies = [
-        {
-          title: 'Spider-Man',
-          releaseDate: new Date(),
-          price: 1400.99,
-        },
-        {
-          title: 'Moana',
-          releaseDate: new Date('2016-11-14'),
-          price: 300.99,
-        },
-      ];
-    }, 500);
-  }
-
+  ngOnInit(): void {}
+  @Input()
   movies!: { title: string; releaseDate: Date; price: number }[];
 }
