@@ -8,6 +8,7 @@ import { GenericListComponent } from './utilities/generic-list/generic-list.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material/material.module';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MaterialModule } from './material/material.module';
     MoviesListComponent,
     TemplatevariablesComponent,
     GenericListComponent,
+    MenuComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
