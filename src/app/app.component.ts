@@ -70,4 +70,8 @@ export class AppComponent implements OnInit {
   duplicatenumber(n: number) {
     return n * 2;
   }
+
+  handleRating(rate: number) {
+    alert(`User Selecte ${rate}`);
+  }
 }

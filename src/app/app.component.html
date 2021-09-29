@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 
-<app-rating></app-rating>
+<app-rating (OnRating)="handleRating($event)"></app-rating>
 <!-- <div class="container">
   <h2>In Theaters</h2>
   <app-movies-list [movies]="moviesInTeathers"></app-movies-list>
