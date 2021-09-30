@@ -62,7 +62,10 @@ export class AppComponent implements OnInit {
 
     this.moviesFutureRealses = [];
   }
-  title = 'angular-moveis';
+
+  display: boolean = true;
+
+  title: string = 'angular-moveis';
 
   moviesInTeathers!: { title: string; releaseDate: Date; price: number }[];
   moviesFutureRealses!: { title: string; releaseDate: Date; price: number }[];

@@ -1,6 +1,14 @@
 <app-menu></app-menu>
 
-<app-rating (OnRating)="handleRating($event)"></app-rating>
+<div>
+  <input type="text" (input)="title = $any($event.target).value" />
+</div>
+<div>
+  <input type="checkbox" checked (change)="display = !this.display" />
+</div>
+<app-lifeclycle *ngIf="display" [title]="title"></app-lifeclycle>
+<!-- <app-rating (OnRating)="handleRating($event)"></app-rating> -->
+
 <!-- <div class="container">
   <h2>In Theaters</h2>
   <app-movies-list [movies]="moviesInTeathers"></app-movies-list>

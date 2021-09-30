@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilities/rating/rating.component';
+import { LifeclycleComponent } from './lifeclycle/lifeclycle.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RatingComponent } from './utilities/rating/rating.component';
     GenericListComponent,
     MenuComponent,
     RatingComponent,
+    LifeclycleComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
