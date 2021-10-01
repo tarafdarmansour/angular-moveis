@@ -13,6 +13,12 @@ import { RatingComponent } from './utilities/rating/rating.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
+import { CreateGenresComponent } from './genres/create-genres/create-genres.component';
+import { IndexActorsComponent } from './actors/index-actors/index-actors.component';
+import { CreateActorComponent } from './actors/create-actor/create-actor.component';
+import { IndexMovieTheaterComponent } from './movie-theater/index-movie-theater/index-movie-theater.component';
+import { CreateMovieTheaterComponent } from './movie-theater/create-movie-theater/create-movie-theater.component';
+import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,12 @@ import { IndexGenresComponent } from './genres/index-genres/index-genres.compone
     RatingComponent,
     HomeComponent,
     IndexGenresComponent,
+    CreateGenresComponent,
+    IndexActorsComponent,
+    CreateActorComponent,
+    IndexMovieTheaterComponent,
+    CreateMovieTheaterComponent,
+    CreateMovieComponent,
   ],
   imports: [
     BrowserModule,
