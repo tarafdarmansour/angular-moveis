@@ -19,6 +19,10 @@ import { CreateActorComponent } from './actors/create-actor/create-actor.compone
 import { IndexMovieTheaterComponent } from './movie-theater/index-movie-theater/index-movie-theater.component';
 import { CreateMovieTheaterComponent } from './movie-theater/create-movie-theater/create-movie-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
+import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
+import { EditMovieTheaterComponent } from './movie-theater/edit-movie-theater/edit-movie-theater.component';
+import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
+import { EditGenresComponent } from './genres/edit-genres/edit-genres.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +39,10 @@ import { CreateMovieComponent } from './movies/create-movie/create-movie.compone
     IndexMovieTheaterComponent,
     CreateMovieTheaterComponent,
     CreateMovieComponent,
+    EditActorComponent,
+    EditMovieTheaterComponent,
+    EditMovieComponent,
+    EditGenresComponent,
   ],
   imports: [
     BrowserModule,
