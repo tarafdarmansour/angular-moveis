@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-genres.component.css'],
 })
 export class CreateGenresComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  form!: FormGroup;
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      name: '',
+    });
+  }
   saveChanges() {
     // .. save data
     this.router.navigate(['/genres']);
