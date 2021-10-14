@@ -13,6 +13,7 @@ export class EditActorComponent implements OnInit {
   model: actorDTO = {
     name: 'Tom Holand',
     dateOfBirth: new Date(),
+    biography: 'default value',
     picture:
       'https://m.media-amazon.com/images/M/MV5BMGQ5YTZhNjItNmMyOS00ZTNmLTlkODktM2FiZjA4NWVlMmRhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg',
   };
