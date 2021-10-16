@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as L from 'leaflet';
 import {
   latLng,
@@ -8,6 +8,7 @@ import {
   Marker,
   tileLayer,
 } from 'leaflet';
+import { coordinateMap } from './coordinateMap';
 const iconRetinaUrl = './assets/marker-icon-2x.png';
 const iconUrl = './assets/marker-icon.png';
 const shadowUrl = './assets/marker-shadow.png';
@@ -31,7 +32,18 @@ L.Marker.prototype.options.icon = iconDefault;
 export class MapComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.layers = this.initialcoordinate.map((value) =>
+      marker([value.latitude, value.longitude])
+    );
+  }
+
+  @Input()
+  initialcoordinate: coordinateMap[] = [];
+
+  @Output()
+  onSelectedLocation = new EventEmitter<coordinateMap>();
+
   options = {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -50,5 +62,6 @@ export class MapComponent implements OnInit {
     const longitude = event.latlng.lng;
     this.layers = [];
     this.layers.push(marker([latitude, longitude]));
+    this.onSelectedLocation.emit({ latitude, longitude });
   }
 }
