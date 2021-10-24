@@ -11,3 +11,8 @@ export interface actorDTO {
   picture: string;
   biography: string;
 }
+
+export interface actorAutoCompleteDTO {
+  name: string;
+  picture: string;
+}
