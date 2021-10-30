@@ -9,6 +9,6 @@ export class GenresService {
   constructor(private client: HttpClient) {}
 
   getAll(): genreDTO[] {
-    return [{ id: 1, name: 'Drama' }];
+    return [{ id: 1, name: 'Drama1' }];
   }
 }
