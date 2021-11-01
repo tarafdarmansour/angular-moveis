@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { firstLetterUppercase } from 'src/app/validators/firstLetterUpperCase';
 import { genreCreationDTO } from '../genre.model';
+import { GenresService } from '../genres.service';
 
 @Component({
   selector: 'app-create-genres',
@@ -15,12 +16,15 @@ import { genreCreationDTO } from '../genre.model';
   styleUrls: ['./create-genres.component.css'],
 })
 export class CreateGenresComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private genreService: GenresService) {}
 
   ngOnInit(): void {}
   saveChanges(genreCreationDTO: genreCreationDTO) {
-    // .. save data
-    console.log(genreCreationDTO);
-    this.router.navigate(['/genres']);
+    this.genreService.create(genreCreationDTO).subscribe(
+      () => {
+        this.router.navigate(['/genres']);
+      },
+      (err) => console.error(err)
+    );
   }
 }
