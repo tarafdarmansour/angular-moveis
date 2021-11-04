@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { parseWebAPIErrors } from 'src/app/utilities/utils';
 import { firstLetterUppercase } from 'src/app/validators/firstLetterUpperCase';
 import { genreCreationDTO } from '../genre.model';
 import { GenresService } from '../genres.service';
@@ -16,6 +17,8 @@ import { GenresService } from '../genres.service';
   styleUrls: ['./create-genres.component.css'],
 })
 export class CreateGenresComponent implements OnInit {
+  errors: string[] = [];
+
   constructor(private router: Router, private genreService: GenresService) {}
 
   ngOnInit(): void {}
@@ -24,7 +27,7 @@ export class CreateGenresComponent implements OnInit {
       () => {
         this.router.navigate(['/genres']);
       },
-      (err) => console.error(err)
+      (err) => (this.errors = parseWebAPIErrors(err))
     );
   }
 }
