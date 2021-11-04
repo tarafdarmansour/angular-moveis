@@ -10,5 +10,5 @@ export class GenericListComponent implements OnInit {
 
   ngOnInit(): void {}
   @Input()
-  list!: { title: string; releaseDate: Date; price: number }[];
+  list!: any[];
 }
