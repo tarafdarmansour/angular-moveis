@@ -16,6 +16,14 @@ export class GenresService {
     return this.client.get<genreDTO[]>(this.apiUrl);
   }
 
+  getById(id: number): Observable<genreDTO> {
+    return this.client.get<genreDTO>(`${this.apiUrl}/${id}`);
+  }
+
+  edit(id: number, genre: genreCreationDTO) {
+    return this.client.put(`${this.apiUrl}/${id}`, genre);
+  }
+
   create(genre: genreCreationDTO) {
     return this.client.post(this.apiUrl, genre);
   }
