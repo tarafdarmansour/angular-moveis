@@ -27,4 +27,8 @@ export class GenresService {
   create(genre: genreCreationDTO) {
     return this.client.post(this.apiUrl, genre);
   }
+
+  delete(id: number) {
+    return this.client.delete(`${this.apiUrl}/${id}`);
+  }
 }

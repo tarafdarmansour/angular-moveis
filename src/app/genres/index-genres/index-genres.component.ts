@@ -15,8 +15,18 @@ export class IndexGenresComponent implements OnInit {
   columnsToDisplay = ['name', 'actions'];
 
   ngOnInit(): void {
-    this.genresService.getAll().subscribe((g) => {
-      this.genres = g;
+    this.loadGenres();
+  }
+
+  loadGenres() {
+    this.genresService.getAll().subscribe((genres) => {
+      this.genres = genres;
+    });
+  }
+
+  delete(id: number) {
+    this.genresService.delete(id).subscribe(() => {
+      this.loadGenres();
     });
   }
 }
