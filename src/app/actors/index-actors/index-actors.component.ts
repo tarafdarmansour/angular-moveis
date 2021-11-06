@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { actorDTO } from '../actor.model';
 import { ActorsService } from '../actors.service';
 
@@ -10,13 +12,31 @@ import { ActorsService } from '../actors.service';
 export class IndexActorsComponent implements OnInit {
   constructor(private actorsService: ActorsService) {}
 
-  actors!: actorDTO[];
+  actors!: actorDTO[] | any;
   columnsToDisplay = ['name', 'actions'];
+  totalAmountOfRecords!: string | null;
+  currentPage = 1;
+  pageSize = 5;
 
   ngOnInit(): void {
-    this.actorsService.get().subscribe((response: actorDTO[]) => {
-      this.actors = response;
-    });
+    this.loadData();
+  }
+
+  loadData() {
+    this.actorsService
+      .get(this.currentPage, this.pageSize)
+      .subscribe((response: HttpResponse<actorDTO[]>) => {
+        this.actors = response.body;
+        this.totalAmountOfRecords = response.headers.get(
+          'totalAmountOfRecords'
+        );
+      });
+  }
+
+  updatePagination(event: PageEvent) {
+    this.currentPage = event.pageIndex + 1;
+    this.pageSize = event.pageSize;
+    this.loadData();
   }
 
   delete(id: number) {}
